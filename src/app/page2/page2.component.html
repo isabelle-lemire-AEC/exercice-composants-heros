@@ -1,0 +1,40 @@
+<div>
+    Page 2
+    <div>
+        <app-entete></app-entete>
+    </div>
+    <div>
+        <mat-drawer-container autosize>
+            <mat-drawer class="sidenav-drawer"  #drawer mode="side">
+                <app-recherche></app-recherche>
+            </mat-drawer>
+        
+            <div>
+                <button type="button" mat-button (click)="drawer.toggle()">
+                    Afficher le formulaire de recherche
+                </button>
+                <div>
+                    <div>
+                        <app-carousel></app-carousel>
+                    </div>
+                    <div>
+                        <!--<app-hero *ngFor="let h of heros" [hero]="h.nom"></app-hero>-->
+                        <mat-list>
+                            <ng-container *ngFor="let h of heros">
+                                <mat-list-item>
+                                    {{h.nom}} &nbsp;<i *ngIf="h.nom==='The Flash'">(Mon héro préféré!)</i>
+                                </mat-list-item>
+                                <mat-divider></mat-divider>
+                            </ng-container>
+                        </mat-list>
+                    </div>
+                </div>
+            </div>
+        
+        </mat-drawer-container>
+    </div>        
+        
+    <div>
+        <app-pied-page></app-pied-page>
+    </div>
+</div>

@@ -1,0 +1,33 @@
+<div>
+    Page 1
+    <div class="">
+        <app-entete></app-entete>
+    </div>
+    <div class="flex-container">
+        <div>
+            <app-recherche></app-recherche>
+        </div>
+        <div>
+            <div>
+                <app-carousel></app-carousel>
+            </div>
+            <div class="flex-container">
+                <div>
+                    <mat-card>{{heros[0].nom}}</mat-card>
+                    <!--<app-hero [hero]="heros[0]"></app-hero>-->
+                </div>
+                <div>
+                    <mat-card>{{heros[1].nom}}</mat-card>
+                    <!--<app-hero [hero]="heros[1]"></app-hero>-->
+                </div>
+                <div>
+                    <mat-card>{{heros[2].nom}}</mat-card>
+                    <!--<app-hero [hero]="heros[2]"></app-hero>-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <app-pied-page></app-pied-page>
+    </div>
+</div>
