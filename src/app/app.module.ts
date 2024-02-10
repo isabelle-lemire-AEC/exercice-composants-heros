@@ -20,6 +20,20 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatListModule } from '@angular/material/list';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { MatIconModule } from '@angular/material/icon';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+
+import { FormsModule } from '@angular/forms';
+import { TableHerosComponent } from './table-heros/table-heros.component';
+
+
+
 
 @NgModule({
   declarations: [
@@ -30,7 +44,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
     Page1Component,
     Page2Component,
     PiedPageComponent,
-    RechercheComponent
+    RechercheComponent,
+    TableHerosComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +56,17 @@ import { MatSidenavModule } from '@angular/material/sidenav';
     MatToolbarModule, 
     MatListModule, 
     MatDividerModule, 
-    MatSidenavModule
+    MatSidenavModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatIconModule,
+    MatFormFieldModule,
+    MatButtonModule,
+    MatInputModule,
+    MatSnackBarModule,
+    FormsModule //si on veut faire des formulaires. À avoir absolument
+    
   ],
   providers: [HeroService],
   bootstrap: [AppComponent]

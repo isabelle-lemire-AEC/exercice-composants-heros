@@ -1,8 +1,12 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Hero } from './hero';
 import { Observable } from 'rxjs';
 
+const httpOptions = { // on le fait une fois qu'on est prêt a faire l'ajout modif suppression. Ça dit à nos API d'ajuster ça a du JSON et non du html
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
+  
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +17,20 @@ export class HeroService {
   constructor(private http: HttpClient) { }
 
   getHeros(): Observable<Hero[]> {
-    return this.http.get<Hero[]>(this.API_URL);  
+    return this.http.get<Hero[]>(this.API_URL);  //on utilise ici GET
   }
+
+  addHero(hero:Hero): Observable<void> { // le composant qui me demande l'ajout va devoir me fournir un hero valide et moi ce que je retourne en ce moment c'est rien
+    return this.http.post<void>(this.API_URL, hero, httpOptions); // on utilise ici POST
+    // this.API_URL > on envoie l'url, hero > notre hero et httpOptions >on lui dit que C'est du JSON
+    // si pas valide, ne fait pas le traitement.
+  }
+
+  deleteHero(_id: string): Observable<void> { // besoin d'un id
+    return this.http.delete<void>(`${this.API_URL}/${_id}`); // je viens construire mon url (`${this.API_URL}/${_id}`) on utilise DELETE
+  }
+    
+    
+    
 
 }
