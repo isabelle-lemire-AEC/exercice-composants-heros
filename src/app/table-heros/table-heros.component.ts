@@ -19,7 +19,7 @@ export class TableHerosComponent implements OnInit {
   columnsToDisplay = ['nom', 'actions']; // on indique ici qu'elle colonne ont veut afficher
 
   @ViewChild(MatTable) tableHeros!: MatTable<Hero>;
-  newHero: Hero = { nom: '' }; // cette variable doit suivre le composant du formulaire
+  hero: Hero = { nom: '' }; // cette variable doit suivre le composant du formulaire
 
   /* Pour la pagniation et le tri */
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -50,10 +50,10 @@ export class TableHerosComponent implements OnInit {
     );
   }
 
-  addHero(heroFormAjout: NgForm) { 
-    if (heroFormAjout.valid) { 
-      this.heroService.addHero(this.newHero).subscribe(_ => { // si on ne réutilise pas le résultat on met un underscore
-            heroFormAjout.resetForm(); //réinitialise le formulaire
+  addHero(heroForm: NgForm) { 
+    if (heroForm.valid) { 
+      this.heroService.addHero(this.hero).subscribe(_ => { // si on ne réutilise pas le résultat on met un underscore
+            heroForm.resetForm(); //réinitialise le formulaire
             this.getHeros(); // met a jour et va chercher la liste des heros
             this._snackBar.open("Héro ajouté!", undefined, {
               duration: 2000
@@ -61,6 +61,24 @@ export class TableHerosComponent implements OnInit {
       });
     }
   }
+
+  showFormHero(hero: Hero) { // pour faire apparaitre le héro dans le formulaire de modif
+      this.hero = hero;
+  }
+
+    
+  updateHero(heroForm: NgForm) {
+    if (heroForm.valid) { // vérifie si c'est valide
+      this.heroService.updateHero(this.hero).subscribe(_ => { // appelle la méthode de update dans mes services et fait le update
+        heroForm.resetForm(); // reset la liste
+        this.getHeros(); // va chercher les héros
+        this._snackBar.open("Héro modifié!", undefined, {
+        duration: 2000
+        });
+      });
+    }
+  }
+    
 
   deleteHero(_id: string) { 
     this.heroService.deleteHero(_id).subscribe(_ => { // fait le delete
