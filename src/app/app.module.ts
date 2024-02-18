@@ -34,6 +34,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 import { FormsModule } from '@angular/forms';
+import { FormulaireHeroComponent } from './formulaire-hero/formulaire-hero.component';
 
 
 
@@ -50,7 +51,8 @@ import { FormsModule } from '@angular/forms';
     RechercheComponent,
     TableHerosComponent,
     HeroDetailComponent,
-    AccueilComponent
+    AccueilComponent,
+    FormulaireHeroComponent
   ],
   imports: [
     BrowserModule,
