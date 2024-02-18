@@ -1,4 +1,23 @@
-div {
-    background-color: #7ff0c3;
-    width: 100%
+nav {
+    background-color: bisque;
+    /*padding: 25px;*/
+}
+
+ul {
+    margin: 0;
+    display: flex;
+    list-style-type:none;
+}
+
+li {
+    padding: 25px;
+}
+
+a {
+    text-decoration: none;
+    padding: 25px;
+}
+
+a:hover {
+    background-color: rgb(204, 163, 112);
 }

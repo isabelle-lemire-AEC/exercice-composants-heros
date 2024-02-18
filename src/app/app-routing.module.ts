@@ -13,7 +13,7 @@ const routes: Routes = [
   { path: 'page2', component: Page2Component },
   { path: 'tableau', component: TableHerosComponent },
   { path: 'heroRouteStatique', component: HeroDetailComponent },
-  { path: 'heroRouteDynamique/:id', component: HeroDetailComponent }
+  { path: 'heroRouteDynamique/:_id', component: HeroDetailComponent }
 ];
 
 @NgModule({
