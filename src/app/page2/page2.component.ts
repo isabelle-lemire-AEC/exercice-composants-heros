@@ -12,15 +12,21 @@ export class Page2Component implements OnInit {
   //heros = HEROS;
   heros: Hero[] = []; // on viens chercher le tableau de héros
 
-  constructor(private heroService: HeroService) { }
 
-  ngOnInit(): void {
+  constructor(private heroService: HeroService) { } // fait appel au service Hero
+
+  ngOnInit(): void { // quand le composant est initialisé il viens chercher les heros
     this.getHeros();
   }
 
   getHeros(): void {
     this.heroService.getHeros() // fait appel au service
-        .subscribe(resultat => this.heros = resultat); // se souscrit au service et le met dans le tableau hero
+        .subscribe(resultat => {
+          this.heros = resultat;
+          this.heros.forEach(h => {
+            h.uneAutrePropriete = "une autre propriété";// s'affiche si jamais c'est vide
+          });
+        }); // se souscrit au service et le met dans le tableau hero
   }
 
 }

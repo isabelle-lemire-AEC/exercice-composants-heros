@@ -13,6 +13,10 @@ import { Page1Component } from './page1/page1.component';
 import { Page2Component } from './page2/page2.component';
 import { PiedPageComponent } from './pied-page/pied-page.component';
 import { RechercheComponent } from './recherche/recherche.component';
+import { TableHerosComponent } from './table-heros/table-heros.component';
+import { HeroDetailComponent } from './hero-detail/hero-detail.component';
+import { AccueilComponent } from './accueil/accueil.component';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatCardModule } from '@angular/material/card';
@@ -30,7 +34,6 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 import { FormsModule } from '@angular/forms';
-import { TableHerosComponent } from './table-heros/table-heros.component';
 
 
 
@@ -45,7 +48,9 @@ import { TableHerosComponent } from './table-heros/table-heros.component';
     Page2Component,
     PiedPageComponent,
     RechercheComponent,
-    TableHerosComponent
+    TableHerosComponent,
+    HeroDetailComponent,
+    AccueilComponent
   ],
   imports: [
     BrowserModule,

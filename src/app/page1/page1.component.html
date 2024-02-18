@@ -1,8 +1,5 @@
 <div>
     Page 1
-    <div class="">
-        <app-entete></app-entete>
-    </div>
     <div class="flex-container">
         <div>
             <app-recherche></app-recherche>
@@ -12,19 +9,22 @@
                 <app-carousel></app-carousel>
             </div>
             <div class="flex-container">
-                <div>
+                <mat-card *ngFor="let h of heros">{{h.nom}}</mat-card>
+                <!-- 
+                    <div>
                     <mat-card>{{heros[0].nom}}</mat-card>
                     <mat-card>{{heros[0].uneAutrePropriete}}</mat-card>
-                    <!--<app-hero [hero]="heros[0]"></app-hero>-->
+                    <app-hero [hero]="heros[0]"></app-hero>
                 </div>
                 <div>
                     <mat-card>{{heros[1].nom}}</mat-card>
-                    <!--<app-hero [hero]="heros[1]"></app-hero>-->
+                    <app-hero [hero]="heros[1]"></app-hero>
                 </div>
                 <div>
                     <mat-card>{{heros[2].nom}}</mat-card>
-                    <!--<app-hero [hero]="heros[2]"></app-hero>-->
+                    <app-hero [hero]="heros[2]"></app-hero>
                 </div>
+                 -->
             </div>
         </div>
     </div>

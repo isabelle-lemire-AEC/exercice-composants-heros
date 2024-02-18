@@ -1,9 +1,6 @@
 <div>
     Page 2
     <div>
-        <app-entete></app-entete>
-    </div>
-    <div>
         <mat-drawer-container autosize>
             <mat-drawer class="sidenav-drawer"  #drawer mode="side">
                 <app-recherche></app-recherche>
@@ -22,7 +19,7 @@
                         <mat-list>
                             <ng-container *ngFor="let h of heros">
                                 <mat-list-item>
-                                    {{h.nom}} &nbsp;<i *ngIf="h.nom==='The Flash'">(Mon héro préféré!)</i>
+                                    {{h.nom}}
                                 </mat-list-item>
                                 <mat-divider></mat-divider>
                             </ng-container>

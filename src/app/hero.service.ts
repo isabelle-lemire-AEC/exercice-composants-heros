@@ -14,12 +14,21 @@ const httpOptions = { // on le fait une fois qu'on est prêt a faire l'ajout mod
   providedIn: 'root'
 })
 export class HeroService {
+  //getHero(arg0: string) {
+  //  throw new Error('Method not implemented.');
+  //}
+  
   API_URL = 'https://heros-vjc9.onrender.com/api/heros';
 
   constructor(private http: HttpClient) { }
 
   getHeros(): Observable<Hero[]> {
     return this.http.get<Hero[]>(this.API_URL);  //on utilise ici GET
+  }
+
+  getHero(id: string): Observable<Hero> {
+    const url = `${this.API_URL}/${id}`;
+    return this.http.get<Hero>(url);
   }
 
   addHero(hero:Hero): Observable<void> { // le composant qui me demande l'ajout va devoir me fournir un hero valide et moi ce que je retourne en ce moment c'est rien
