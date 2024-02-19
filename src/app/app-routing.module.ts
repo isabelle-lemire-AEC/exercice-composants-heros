@@ -12,7 +12,6 @@ const routes: Routes = [
   { path: 'page1', component: Page1Component },
   { path: 'page2', component: Page2Component },
   { path: 'tableau', component: TableHerosComponent },
-  { path: 'heroRouteStatique', component: HeroDetailComponent },
   { path: 'heroRouteDynamique/:_id', component: HeroDetailComponent }
 ];
 
