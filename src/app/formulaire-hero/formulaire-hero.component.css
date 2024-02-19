@@ -8,16 +8,6 @@ table {
     flex-wrap: wrap;
 }
 
-.align-center {
-    display: flex;
-    align-items: center;
-}
-
-.titre-ajout {
-    margin-right: 15px;
-    padding-top: 25px;
-}
-
 .ml-auto {
     margin-left: auto;
 }

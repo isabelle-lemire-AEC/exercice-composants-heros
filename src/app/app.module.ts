@@ -32,8 +32,11 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatDialogModule } from '@angular/material/dialog';
+
 
 import { FormsModule } from '@angular/forms';
+import { FormulaireHeroComponent } from './formulaire-hero/formulaire-hero.component';
 
 
 
@@ -50,7 +53,8 @@ import { FormsModule } from '@angular/forms';
     RechercheComponent,
     TableHerosComponent,
     HeroDetailComponent,
-    AccueilComponent
+    AccueilComponent,
+    FormulaireHeroComponent
   ],
   imports: [
     BrowserModule,
@@ -70,6 +74,7 @@ import { FormsModule } from '@angular/forms';
     MatButtonModule,
     MatInputModule,
     MatSnackBarModule,
+    MatDialogModule,
     FormsModule //si on veut faire des formulaires. À avoir absolument
     
   ],
