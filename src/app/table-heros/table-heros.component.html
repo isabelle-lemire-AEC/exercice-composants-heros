@@ -26,7 +26,7 @@
         <ng-container matColumnDef="actions">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> </th> <!-- on met rien dans l'entête -->
             <td mat-cell *matCellDef="let hero">
-                <button mat-icon-button aria-label="Voir détails" [routerLink]="['/heroRouteDynamique', hero._id]">
+                <button mat-icon-button aria-label="Voir détails" routerLink="/heroRouteDynamique/{{ hero._id }}">
                     <mat-icon>visibility</mat-icon>
                 </button>
                 <button mat-icon-button aria-label="Modifier" (click)="openDialog(hero)">
